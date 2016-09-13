@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Subject.create(:name=>'English')
+Subject.create(:name=>'Hindi')
+Subject.create(:name=>'Math')
+Subject.create(:name=>'Science')
