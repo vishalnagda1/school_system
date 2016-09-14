@@ -1,6 +1,6 @@
 class Student < ActiveRecord::Base
   belongs_to :school
-  has_and_belongs_to_many :classrooms
+  has_one :classroom
   has_many :teachers
   has_many :subjects
 
