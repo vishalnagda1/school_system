@@ -25,6 +25,7 @@ Subject.create(:name=>'Sanskrit', :school_id=>'2', :classroom_ids=>[7])
 
 Teacher.create(:name=>'Vishal', :gender=>'male', :phone=>'7737986479', :subject_ids=>[1,2,3], :school_id=>1, :classroom_ids=>[1,3,4])
 Teacher.create(:name=>'Chetan', :gender=>'male', :phone=>'8769032876', :subject_ids=>[2,1], :school_id=>1, :classroom_ids=>[2,5])
+Teacher.create(:name=>'XYZ', :gender=>'female', :phone=>'8769032876', :subject_ids=>[3], :school_id=>1, :classroom_ids=>[3,4])
 Teacher.create(:name=>'Aaryan', :gender=>'male', :phone=>'1234567890', :subject_ids=>[4,5], :school_id=>2, :classroom_ids=>[6,8])
 Teacher.create(:name=>'Ajay', :gender=>'male', :phone=>'0987654321', :subject_ids=>[5], :school_id=>2, :classroom_ids=>[7])
 
