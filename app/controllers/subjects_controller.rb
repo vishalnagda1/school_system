@@ -53,6 +53,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subject_params
-      params.require(:subject).permit(:name)
+      params.require(:subject).permit(:name, :school_id, :classroom_id)
     end
 end

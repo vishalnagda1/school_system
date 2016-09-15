@@ -8,6 +8,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1
   def show
+    @teacher = Teacher.find(params[:id])
   end
 
   # GET /teachers/new
@@ -17,6 +18,7 @@ class TeachersController < ApplicationController
 
   # GET /teachers/1/edit
   def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   # POST /teachers
@@ -53,6 +55,6 @@ class TeachersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def teacher_params
-      params.require(:teacher).permit(:name, :gender, :phone, :subject)
+      params.require(:teacher).permit(:name, :gender, :phone, :subject_id, :school_id, :classroom_id)
     end
 end

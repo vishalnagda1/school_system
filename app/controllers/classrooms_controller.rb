@@ -8,6 +8,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1
   def show
+    @classroom = Classroom.find(params[:id])
   end
 
   # GET /classrooms/new
@@ -17,6 +18,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1/edit
   def edit
+    @classroom = Classroom.find(params[:id])
   end
 
   # POST /classrooms
@@ -53,6 +55,6 @@ class ClassroomsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def classroom_params
-      params.require(:classroom).permit(:name, :no_of_student)
+      params.require(:classroom).permit(:name, :no_of_student, :school_id)
     end
 end

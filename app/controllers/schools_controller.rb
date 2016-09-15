@@ -8,6 +8,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1
   def show
+    @school = School.find(params[:id])
   end
 
   # GET /schools/new
@@ -17,6 +18,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1/edit
   def edit
+    @school = School.find(params[:id])
   end
 
   # POST /schools
