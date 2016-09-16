@@ -24,4 +24,10 @@ RSpec.describe SchoolsController, type: :controller do
       response.status.should eq 422
     end
   end
+  context "DELETE destroy" do
+    it "should destroy school and return 302" do
+      delete :destroy, :id=>@school.id
+      response.status.should eq 302
+    end
+  end
 end
