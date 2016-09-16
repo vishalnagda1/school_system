@@ -12,6 +12,7 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/new
   def new
+    @classroom = Classroom.new
   end
 
   # GET /classrooms/1/edit

@@ -12,6 +12,7 @@ class SchoolsController < ApplicationController
 
   # GET /schools/new
   def new
+    @school = School.new
   end
 
   # GET /schools/1/edit

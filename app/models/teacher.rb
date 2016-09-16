@@ -8,4 +8,8 @@ class Teacher < ActiveRecord::Base
   validates_numericality_of :phone
   validates_length_of :phone, :minimum => 10, :maximum => 10
   validates_inclusion_of :gender, in: ['male', 'female', 'other']
+
+  def subject_details
+    self.subjects
+  end
 end

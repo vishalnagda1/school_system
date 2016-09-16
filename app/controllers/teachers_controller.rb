@@ -9,6 +9,13 @@ class TeachersController < ApplicationController
   # GET /teachers/1
   def show
     @teacher = Teacher.find(params[:id])
+
+    # @teacher = Teacher.find(params[:id])
+    # if @teacher
+    #   render :json => @teacher.to_json(:methods => [:subject_details]), :status => :ok
+    # else
+    #   render :nothing => true, :status => :unprocessable_entity
+    # end
   end
 
   # GET /teachers/new
