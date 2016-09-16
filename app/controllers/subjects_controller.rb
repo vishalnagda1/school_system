@@ -21,21 +21,22 @@ class SubjectsController < ApplicationController
 
   # POST /subjects
   def create
-    @subject = Subject.new(subject_params)
-
+    attr=(params.require(:subject).permit(:name)).merge(:classroom_ids=>params[:subject][:classroom_ids],:school_ids=>params[:subject][:school_ids])
+    @subject = Subject.new(attr)
     if @subject.save
-      redirect_to @subject, notice: 'Subject was successfully created.'
+      redirect_to @subject, notice: 'Subject was successfully created.', status: :created
     else
-      render :new
+      p @subject.errors
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /subjects/1
   def update
     if @subject.update(subject_params)
-      redirect_to @subject, notice: 'Subject was successfully updated.'
+      redirect_to @subject, notice: 'Subject was successfully updated.', status: :ok
     else
-      render :edit
+      render :edit, :status => :unprocessable_entity
     end
   end
 
@@ -53,6 +54,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def subject_params
-      params.require(:subject).permit(:name, :school_id, :classroom_id)
+      params.require(:subject).permit(:name, :school_ids, :classroom_ids)
     end
 end

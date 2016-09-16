@@ -17,7 +17,7 @@ gem 'mysql'
 # # Use jquery as the JavaScript library
 # gem 'jquery-rails'
 # # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
+gem 'turbolinks'
 # # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.0'
 # # bundle exec rake doc:rails generates the API under doc/api.
@@ -38,6 +38,15 @@ group :development, :test do
   gem 'simplecov'
   gem 'database_cleaner'
 end
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+gem 'test-unit'
 
 #   # Access an IRB console on exception pages or by using <%= console %> in views
 #   gem 'web-console', '~> 2.0'

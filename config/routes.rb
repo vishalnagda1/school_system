@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'welcome/home', to:'welcome#home'
+
   resources :subjects
 
   resources :schools
