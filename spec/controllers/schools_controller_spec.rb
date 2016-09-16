@@ -14,4 +14,14 @@ RSpec.describe SchoolsController, type: :controller do
       response.status.should eq 422
     end
   end
+  context "PUT update" do
+    it "should return success if valid params are passed" do
+      put :update, :id=>@school.id, :school=>{:phone=>"8769032876"}
+      response.status.should eq 200
+    end
+    it "should not return success if invalid params are passed" do
+      put :update, :id=>@school.id, :school=>{:phone=>"abcdefghij"}
+      response.status.should eq 422
+    end
+  end
 end

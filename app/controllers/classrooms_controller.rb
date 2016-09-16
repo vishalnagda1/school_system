@@ -8,17 +8,14 @@ class ClassroomsController < ApplicationController
 
   # GET /classrooms/1
   def show
-    @classroom = Classroom.find(params[:id])
   end
 
   # GET /classrooms/new
   def new
-    @classroom = Classroom.new
   end
 
   # GET /classrooms/1/edit
   def edit
-    @classroom = Classroom.find(params[:id])
   end
 
   # POST /classrooms
@@ -26,18 +23,18 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.new(classroom_params)
 
     if @classroom.save
-      redirect_to @classroom, notice: 'Classroom was successfully created.'
+      redirect_to @classroom, notice: 'Classroom was successfully created.', status: :ok
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /classrooms/1
   def update
     if @classroom.update(classroom_params)
-      redirect_to @classroom, notice: 'Classroom was successfully updated.'
+      redirect_to @classroom, notice: 'Classroom was successfully updated.', status: :ok
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -8,17 +8,14 @@ class SchoolsController < ApplicationController
 
   # GET /schools/1
   def show
-    @school = School.find(params[:id])
   end
 
   # GET /schools/new
   def new
-    @school = School.new
   end
 
   # GET /schools/1/edit
   def edit
-    @school = School.find(params[:id])
   end
 
   # POST /schools
@@ -35,9 +32,9 @@ class SchoolsController < ApplicationController
   # PATCH/PUT /schools/1
   def update
     if @school.update(school_params)
-      redirect_to @school, notice: 'School was successfully updated.'
+      redirect_to @school, notice: 'School was successfully updated.', status: :ok
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
