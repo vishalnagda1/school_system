@@ -7,7 +7,7 @@ RSpec.describe SchoolsController, type: :controller do
   context "POST create" do
     it "should return success if valid params are passed" do
       post :create, :school=>{:name=>@school.name, :city=>@school.city, :state=>@school.state, :zipcode=>@school.zipcode, :phone=>@school.phone}
-      response.status.should eq 200
+      response.status.should eq 201
     end
     it "should not return success if invalid params are passed" do
       post :create, :school=>{:name=>@school.name, :city=>@school.city, :state=>@school.state, :zipcode=>'ABCD', :phone=>'123456789'}

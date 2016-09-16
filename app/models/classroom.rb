@@ -4,6 +4,6 @@ class Classroom < ActiveRecord::Base
   has_and_belongs_to_many :teachers
   has_and_belongs_to_many :subjects
 
-  validates_presence_of :name, :no_of_student
-  validates_numericality_of :no_of_student
+  validates_presence_of :name, :no_of_student, :school_id
+  validates_numericality_of :no_of_student, :school_id
 end

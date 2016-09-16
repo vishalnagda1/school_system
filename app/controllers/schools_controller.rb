@@ -23,7 +23,7 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
 
     if @school.save
-      redirect_to @school, notice: 'School was successfully created.', status: :ok
+      redirect_to @school, notice: 'School was successfully created.', status: :created
     else
       render :new, status: :unprocessable_entity
     end
