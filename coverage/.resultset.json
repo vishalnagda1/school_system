@@ -25,7 +25,7 @@
         1,
         null
       ],
-      "/Users/vishal/development/school_system/app/models/school.rb": [
+      "/Users/vishal/development/school_system/app/models/teacher.rb": [
         1,
         1,
         1,
@@ -35,6 +35,50 @@
         1,
         1,
         1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/vishal/development/school_system/app/models/classroom.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/vishal/development/school_system/app/models/subject.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/vishal/development/school_system/app/controllers/application_controller.rb": [
@@ -367,7 +411,8 @@
         0,
         0
       ],
-      "/Users/vishal/development/school_system/app/models/classroom.rb": [
+      "/Users/vishal/development/school_system/app/models/school.rb": [
+        0,
         0,
         0,
         0,
@@ -389,53 +434,8 @@
         0,
         0,
         0
-      ],
-      "/Users/vishal/development/school_system/app/models/subject.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/vishal/development/school_system/app/models/teacher.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1474230406
+    "timestamp": 1474232720
   }
 }
