@@ -8,10 +8,8 @@ RSpec.describe School, type: :model do
       end
     end
 
-    it { should validate_presence_of :name }
-
-    # let(:school) {FactoryGirl.create(:school)}
-
-    # it { should validate_numericality_of(:phone) }
+    it { should validate_numericality_of(:phone) }
+    it { should validate_numericality_of(:zipcode) }
+    it { should validate_length_of(:phone).is_at_least(10) }
   end
 end
