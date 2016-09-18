@@ -8,7 +8,6 @@ class StudentsController < ApplicationController
 
   # GET /students/1
   def show
-    @student = Student.find(params[:id])
   end
 
   # GET /students/new
@@ -18,17 +17,18 @@ class StudentsController < ApplicationController
 
   # GET /students/1/edit
   def edit
-    @student = Student.find(params[:id])
   end
 
   # POST /students
   def create
+    student_params = (params.require(:student).permit(:name, :father_name, :mother_name, :city, :state, :zipcode, :phone, :school_id, :classroom_id)).merge(:teacher_ids=>params[:student][:teacher_ids],:subject_ids=>params[:student][:subject_ids])
     @student = Student.new(student_params)
 
     if @student.save
-      redirect_to @student, notice: 'Student was successfully created.'
+      redirect_to @student, notice: 'Student was successfully created.', status: :created
     else
-      render :new
+      # p @student.errors
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -37,7 +37,8 @@ class StudentsController < ApplicationController
     if @student.update(student_params)
       redirect_to @student, notice: 'Student was successfully updated.'
     else
-      render :edit
+      # p @student.errors
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -55,6 +56,6 @@ class StudentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def student_params
-      params.require(:student).permit(:name, :father_name, :mother_name, :city, :state, :zipcode, :phone, :school_id, :classroom_id, :teacher_id, :subject_id)
+      params.require(:student).permit(:name, :father_name, :mother_name, :city, :state, :zipcode, :phone, :school_id, :classroom_id)
     end
 end

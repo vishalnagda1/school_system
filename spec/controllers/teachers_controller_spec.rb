@@ -37,14 +37,13 @@ RSpec.describe TeachersController, type: :controller do
       @teacher.subjects<<@subject2
     end
     it "should be success" do
-      p attributes=@teacher.attributes.merge(:classroom_ids=>@teacher.classroom_ids,:subject_ids=>@teacher.subject_ids)
+      attributes=@teacher.attributes.merge(:classroom_ids=>@teacher.classroom_ids,:subject_ids=>@teacher.subject_ids)
       post :create, :teacher=>attributes
       response.status.should eq 201
     end
     it "should not be success" do
       attributes=@teacher.attributes.merge(:classroom_ids=>@teacher.classroom_ids,:subject_ids=>@teacher.subject_ids)
       attributes["phone"]="ABCD"
-      attributes
       post :create, :teacher=>attributes
       response.status.should eq 422
     end
@@ -72,7 +71,7 @@ RSpec.describe TeachersController, type: :controller do
        }.to change(Teacher,:count).by(-1)
      end
 
-     it "should redirect to index" do
+     it "should redirect to teacher#index" do
        delete :destroy, id: @teacher
        response.should redirect_to teachers_url
      end

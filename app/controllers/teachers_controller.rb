@@ -36,7 +36,7 @@ class TeachersController < ApplicationController
     if @teacher.save
       redirect_to @teacher, notice: 'Teacher was successfully created.', status: :created
     else
-      p @teacher.errors
+      # p @teacher.errors
       render :new, status: :unprocessable_entity
     end
   end
@@ -46,7 +46,7 @@ class TeachersController < ApplicationController
     if @teacher.update(teacher_params)
       redirect_to @teacher, notice: 'Teacher was successfully updated.', status: :ok
     else
-      p @teacher.errors
+      # p @teacher.errors
       render :edit, status: :unprocessable_entity
     end
   end

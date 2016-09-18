@@ -23,11 +23,11 @@ class SubjectsController < ApplicationController
   def create
     attr=(params.require(:subject).permit(:name)).merge(:classroom_ids=>params[:subject][:classroom_ids],:school_ids=>params[:subject][:school_ids])
     @subject = Subject.new(attr)
-    p @subject
+    # p @subject
     if @subject.save
       redirect_to @subject, notice: 'Subject was successfully created.', status: :created
     else
-      p @subject.errors
+      # p @subject.errors
       render :new, status: :unprocessable_entity
     end
   end

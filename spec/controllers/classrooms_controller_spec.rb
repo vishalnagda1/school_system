@@ -60,7 +60,7 @@ RSpec.describe ClassroomsController, type: :controller do
       }.to change(Classroom,:count).by(-1)
     end
 
-    it "should redirect to index" do
+    it "should redirect to classroom#index" do
       delete :destroy, id: @classroom
       response.should redirect_to classrooms_url
     end
